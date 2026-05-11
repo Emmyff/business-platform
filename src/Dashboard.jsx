@@ -2,6 +2,7 @@ import { useState } from 'react'
 import Inventory from './Inventory'
 import Sales from './Sales'
 import Customers from './Customers'
+import Expenses from './Expenses'
 
 function Dashboard({ user, onLogout }) {
   const [activePage, setActivePage] = useState('Dashboard')
@@ -10,6 +11,7 @@ function Dashboard({ user, onLogout }) {
     if (activePage === 'Inventory') return <Inventory />
     if (activePage === 'Sales') return <Sales />
     if (activePage === 'Customers') return <Customers />
+    if (activePage === 'Expenses') return <Expenses />
     return (
       <div>
         <h1 style={{ marginBottom: '8px' }}>Welcome back 👋</h1>
