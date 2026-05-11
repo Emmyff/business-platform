@@ -3,6 +3,7 @@ import Inventory from './Inventory'
 import Sales from './Sales'
 import Customers from './Customers'
 import Expenses from './Expenses'
+import AIAssistant from './AIAssitant'
 
 function Dashboard({ user, onLogout }) {
   const [activePage, setActivePage] = useState('Dashboard')
@@ -12,6 +13,7 @@ function Dashboard({ user, onLogout }) {
     if (activePage === 'Sales') return <Sales />
     if (activePage === 'Customers') return <Customers />
     if (activePage === 'Expenses') return <Expenses />
+    if (activePage === 'AI Assistant') return <AIAssistant />
     return (
       <div>
         <h1 style={{ marginBottom: '8px' }}>Welcome back 👋</h1>
@@ -42,7 +44,7 @@ function Dashboard({ user, onLogout }) {
       <div style={{ width: '220px', background: '#1e1e2e', color: 'white', padding: '30px 20px' }}>
         <h2 style={{ marginBottom: '40px', fontSize: '18px' }}>⚡ BizPlatform</h2>
         <nav>
-          {['Dashboard', 'Inventory', 'Sales', 'Customers', 'Expenses'].map(item => (
+          {['Dashboard', 'Inventory', 'Sales', 'Customers', 'Expenses', 'AI Assistant'].map(item => (
             <div key={item} onClick={() => setActivePage(item)} style={{
               padding: '12px 16px', marginBottom: '8px', borderRadius: '8px',
               cursor: 'pointer', background: activePage === item ? '#7c3aed' : 'transparent'
