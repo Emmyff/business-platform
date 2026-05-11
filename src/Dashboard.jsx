@@ -1,11 +1,13 @@
 import { useState } from 'react'
 import Inventory from './Inventory'
+import Sales from './Sales'
 
 function Dashboard({ user, onLogout }) {
   const [activePage, setActivePage] = useState('Dashboard')
 
   const renderPage = () => {
     if (activePage === 'Inventory') return <Inventory />
+    if (activePage === 'Sales') return <Sales />
     return (
       <div>
         <h1 style={{ marginBottom: '8px' }}>Welcome back 👋</h1>
